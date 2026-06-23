@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tantric &amp; Āgamic Śāstras · Part III | Cultural Musings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#c9a86a;--gold-bright:#e8cb8a;--crimson:#7a1f2b;--crimson-bright:#9c2c3a;
+  --bg:#0a080e;--panel:#13101a;--panel-2:#1a1525;--border:#3a2e44;
+  --text:#e0d8f0;--text-dim:#9a90b0;--text-faint:#6a6080;
+  --cream:#f0eaff;--saffron:#c878d0;--indigo:#6a4daa;
+  --jade:#4a3daa;--jade-bright:#8a78dd;--pearl:#d0c8e8;
+  --tantric:#9c3daa;--tantric-bright:#cc78dd;--fire:#d06030;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'EB Garamond',serif;font-size:18px;line-height:1.8;
+  background-image:
+    radial-gradient(ellipse at top left,rgba(156,61,170,0.09),transparent 55%),
+    radial-gradient(ellipse at bottom right,rgba(106,77,170,0.06),transparent 55%);
+}
+.dn{font-family:'Noto Serif Devanagari',serif;}
+h1,h2,h3,h4{font-family:'Cinzel',serif;letter-spacing:0.02em;}
+.mono{font-family:'Source Code Pro',monospace;font-size:0.82em;}
+.app{display:flex;min-height:100vh;}
+.sidebar{width:290px;flex-shrink:0;background:linear-gradient(180deg,#0d0a14,#070509);border-right:1px solid var(--border);position:sticky;top:0;height:100vh;overflow-y:auto;padding:28px 0 40px;}
+.sidebar::-webkit-scrollbar{width:5px;}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+.brand{padding:0 22px 20px;border-bottom:1px solid var(--border);margin-bottom:16px;}
+.brand .om{font-size:32px;color:var(--tantric-bright);display:block;margin-bottom:6px;}
+.brand h1{font-size:13px;color:var(--cream);line-height:1.4;letter-spacing:0.04em;}
+.brand p{font-family:'Cormorant Garamond',serif;font-size:11.5px;color:var(--text-faint);margin-top:5px;font-style:italic;}
+.wp-badge{margin:0 22px 16px;padding:10px 14px;background:rgba(156,61,170,0.1);border:1px solid rgba(156,61,170,0.3);border-radius:4px;}
+.wp-badge .wl{font-family:'Cinzel';font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--tantric-bright);margin-bottom:5px;}
+.wp-badge p{font-size:12px;color:var(--text-faint);line-height:1.5;}
+.navgroup{margin-bottom:4px;}
+.navgroup .label{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--text-faint);padding:10px 22px 4px;}
+.navlink{display:block;padding:7px 22px;color:var(--text-dim);text-decoration:none;font-size:13px;border-left:2px solid transparent;transition:all .15s ease;cursor:pointer;line-height:1.45;}
+.navlink:hover{color:var(--tantric-bright);background:rgba(156,61,170,0.07);}
+.navlink.active{color:var(--tantric-bright);border-left-color:var(--tantric);background:rgba(156,61,170,0.12);}
+.series-nav{margin:14px 22px 0;padding:13px 15px;background:rgba(156,61,170,0.05);border:1px solid var(--border);border-radius:5px;}
+.series-nav .sn-label{font-family:'Cinzel';font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--saffron);margin-bottom:7px;}
+.series-nav a{display:block;font-size:12px;color:var(--text-faint);text-decoration:none;padding:3px 0;transition:color .15s;}
+.series-nav a:hover{color:var(--tantric-bright);}
+.series-nav a.current{color:var(--tantric-bright);font-weight:600;}
+.main{flex:1;min-width:0;}
+.breadcrumb{position:sticky;top:0;z-index:30;background:rgba(10,8,14,0.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:11px 44px;font-size:12.5px;color:var(--text-faint);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.breadcrumb span.cur{color:var(--tantric-bright);}
+.breadcrumb .wp-label{margin-left:auto;font-family:'Cinzel';font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tantric-bright);padding:2px 8px;border:1px solid rgba(156,61,170,0.4);border-radius:2px;}
+.tabbar{position:sticky;top:38px;z-index:29;display:flex;overflow-x:auto;background:var(--panel);border-bottom:1px solid var(--border);scrollbar-width:thin;scrollbar-color:var(--tantric-bright) var(--panel);}
+.tabbar::-webkit-scrollbar{height:3px;}
+.tabbar::-webkit-scrollbar-thumb{background:var(--tantric);border-radius:4px;}
+.tabbtn{flex-shrink:0;padding:10px 16px;font-size:12.5px;color:var(--text-dim);background:none;border:none;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;font-family:'EB Garamond',serif;letter-spacing:0.03em;}
+.tabbtn:hover{color:var(--tantric-bright);}
+.tabbtn.active{color:var(--tantric-bright);border-bottom-color:var(--tantric);background:rgba(156,61,170,0.08);}
+.section{padding:54px 60px 76px;max-width:1180px;}
+.section.hidden{display:none;}
+.wp-header{border:1px solid rgba(156,61,170,0.3);border-radius:6px;padding:28px 32px;margin-bottom:36px;background:linear-gradient(135deg,rgba(156,61,170,0.07),rgba(106,77,170,0.05));}
+.wp-header .series-tag{font-family:'Cinzel';font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--tantric-bright);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.wp-header .series-tag::before{content:'';width:24px;height:1px;background:var(--tantric);}
+.wp-header h2{font-size:27px;color:var(--cream);line-height:1.2;margin-bottom:8px;}
+.wp-header .dn-title{font-family:'Noto Serif Devanagari';font-size:23px;color:var(--tantric-bright);display:block;margin-bottom:10px;}
+.wp-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);}
+.wp-meta-item{font-size:12.5px;color:var(--text-faint);}
+.wp-meta-item strong{color:var(--text-dim);font-weight:500;}
+.abstract{font-family:'Cormorant Garamond';font-size:17.5px;color:var(--text-dim);font-style:italic;line-height:1.7;margin-bottom:8px;}
+.section-heading{font-family:'Cinzel';font-size:12.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--saffron);margin:38px 0 16px;display:flex;align-items:center;gap:10px;}
+.section-heading::before{content:'';width:32px;height:1px;background:var(--saffron);flex-shrink:0;}
+.section-heading .num{font-size:10px;color:var(--text-faint);border:1px solid var(--border);padding:2px 7px;border-radius:2px;font-family:'Source Code Pro',monospace;}
+h2.article-title{font-size:24px;color:var(--cream);margin-bottom:14px;line-height:1.3;}
+h3.sub-title{font-family:'Cinzel';font-size:16px;color:var(--tantric-bright);margin:28px 0 12px;}
+h4.sub-sub{font-family:'Cinzel';font-size:13.5px;color:var(--text);margin:20px 0 8px;}
+p{margin-bottom:15px;}
+p:last-child{margin-bottom:0;}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:22px 26px;margin-bottom:20px;}
+.panel.tantric{border-left:3px solid var(--tantric);}
+.panel.case-study{border-left:3px solid var(--jade-bright);background:rgba(74,61,170,0.05);}
+.panel.research{border-left:3px solid rgba(156,61,170,0.8);}
+.panel h3{color:var(--tantric-bright);font-size:15.5px;margin-bottom:12px;letter-spacing:0.02em;}
+.panel.case-study h3{color:var(--jade-bright);}
+.cs-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border);}
+.cs-num{font-family:'Cinzel';font-size:22px;color:var(--jade-bright);flex-shrink:0;line-height:1;margin-top:2px;}
+.cs-meta{flex:1;}
+.cs-meta .cs-label{font-family:'Cinzel';font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--jade);margin-bottom:4px;}
+.cs-meta h3{color:var(--jade-bright);font-size:16px;margin-bottom:0;}
+.cs-meta .cs-sub{font-size:13px;color:var(--text-faint);margin-top:3px;}
+.sanskrit-block{font-family:'Noto Serif Devanagari';font-size:20px;color:var(--cream);background:var(--panel-2);border-left:3px solid var(--tantric);padding:14px 22px;margin:18px 0;border-radius:0 4px 4px 0;line-height:1.9;}
+.iast{font-family:'Cormorant Garamond';font-style:italic;color:var(--tantric-bright);font-size:16px;}
+.gloss{color:var(--text-dim);font-size:14.5px;margin-top:6px;}
+table.chron{width:100%;border-collapse:collapse;margin:18px 0;font-size:14.5px;}
+table.chron thead tr{background:rgba(156,61,170,0.12);}
+table.chron th{text-align:left;color:var(--tantric-bright);font-family:'Cinzel';font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;padding:10px 13px;border-bottom:2px solid var(--tantric);}
+table.chron td{padding:9px 13px;border-bottom:1px solid rgba(58,46,68,0.45);color:var(--text-dim);vertical-align:top;}
+table.chron td.era{color:var(--saffron);font-family:'Cinzel';font-size:12px;white-space:nowrap;}
+table.chron td.shastra{color:var(--tantric-bright);font-weight:600;}
+table.chron td.note{font-size:13.5px;color:var(--text-faint);}
+table.compare{width:100%;border-collapse:collapse;font-size:14px;margin:16px 0;}
+table.compare th{background:rgba(156,61,170,0.1);color:var(--tantric-bright);font-family:'Cinzel';font-size:10px;letter-spacing:0.08em;text-transform:uppercase;padding:9px 12px;text-align:left;}
+table.compare td{padding:8px 12px;border-bottom:1px solid rgba(58,46,68,0.4);color:var(--text-dim);vertical-align:top;}
+blockquote{border-left:3px solid var(--tantric-bright);padding:10px 20px;margin:18px 0;font-family:'Cormorant Garamond';font-style:italic;font-size:18px;color:var(--text);background:rgba(156,61,170,0.04);}
+blockquote cite{display:block;margin-top:7px;font-size:12.5px;color:var(--text-faint);font-style:normal;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr;}}
+.callout{border:1px solid var(--tantric);border-radius:5px;padding:18px 22px;margin:20px 0;background:rgba(156,61,170,0.04);}
+.callout .cl-head{font-family:'Cinzel';font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tantric-bright);margin-bottom:7px;}
+.stats-row{display:flex;gap:16px;flex-wrap:wrap;margin:20px 0;}
+.stat-card{flex:1;min-width:130px;background:var(--panel);border:1px solid var(--border);border-radius:5px;padding:16px 18px;text-align:center;}
+.stat-card .sv{font-family:'Cinzel';font-size:26px;color:var(--tantric-bright);line-height:1;}
+.stat-card .sl{font-size:12px;color:var(--text-faint);margin-top:5px;line-height:1.4;}
+.timeline{position:relative;padding-left:34px;margin:22px 0;}
+.timeline::before{content:'';position:absolute;left:9px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--tantric),var(--jade-bright),transparent);}
+.tl-item{position:relative;margin-bottom:26px;}
+.tl-item::before{content:'';position:absolute;left:-29px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--tantric);border:2px solid var(--tantric-bright);}
+.tl-item.milestone::before{background:var(--tantric-bright);width:15px;height:15px;left:-31px;}
+.tl-date{font-family:'Cinzel';font-size:11px;color:var(--saffron);letter-spacing:0.08em;margin-bottom:3px;}
+.tl-title{font-family:'Cinzel';font-size:14px;color:var(--cream);margin-bottom:5px;}
+.tl-body{font-size:14.5px;color:var(--text-dim);line-height:1.6;}
+.footnotes{margin-top:36px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--text-faint);}
+.footnotes h4{font-family:'Cinzel';font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-faint);margin-bottom:10px;}
+.fn-item{margin-bottom:6px;padding-left:20px;text-indent:-20px;line-height:1.55;}
+.fn-num{color:var(--saffron);font-family:'Source Code Pro',monospace;font-size:11px;margin-right:6px;}
+.tag{display:inline-block;font-size:10px;letter-spacing:0.05em;text-transform:uppercase;padding:2px 7px;border-radius:3px;border:1px solid var(--border);color:var(--text-faint);margin-right:5px;margin-bottom:3px;}
+.tag.tantric{border-color:var(--tantric);color:var(--tantric-bright);}
+.tag.gold{border-color:var(--gold);color:var(--gold-bright);}
+.footer-nav{display:flex;justify-content:space-between;align-items:center;margin-top:52px;padding-top:22px;border-top:1px solid var(--border);}
+.fn-btn{color:var(--tantric-bright);text-decoration:none;font-size:13.5px;cursor:pointer;font-family:'Cinzel';letter-spacing:0.04em;}
+.fn-btn:hover{color:var(--cream);}
+.part-badge{font-family:'Cinzel';font-size:10px;letter-spacing:0.16em;text-transform:uppercase;padding:4px 12px;border:1px solid var(--tantric-bright);border-radius:3px;color:var(--tantric-bright);}
+@media(max-width:860px){.sidebar{position:fixed;left:-290px;transition:left .2s;z-index:50;}.sidebar.open{left:0;}.section{padding:30px 16px 60px;}.wp-header{padding:18px 16px;}}
+.menu-toggle{display:none;}
+@media(max-width:860px){.menu-toggle{display:block;position:fixed;bottom:20px;right:20px;z-index:60;width:46px;height:46px;border-radius:50%;background:var(--tantric);color:var(--cream);border:none;font-size:20px;cursor:pointer;}}
+</style>
+</head>
+<body>
+<div class="app">
+<nav class="sidebar" id="sidebar">
+  <div class="brand">
+    <span class="om dn">ॐ</span>
+    <h1>शास्त्रोद्भवः<br><span style="font-size:11px;color:var(--text-dim);font-weight:400;">The Birth &amp; Evolution of the Śāstras</span></h1>
+    <p>culturalmusings.com · Research White Paper Series</p>
+  </div>
+  <div class="wp-badge">
+    <div class="wl">White Paper · Part III of V</div>
+    <p>Tantric &amp; Āgamic Śāstras — The revealed traditions outside the Veda</p>
+  </div>
+  <div class="navgroup">
+    <div class="label">भाग ३ · Part III Contents</div>
+    <a class="navlink" data-target="s-abstract3">Abstract &amp; Overview</a>
+    <a class="navlink" data-target="s-agama-taxonomy">§1 · Āgama Taxonomy — What is an Āgama?</a>
+    <a class="navlink" data-target="s-shaiva-agamas">§2 · Śaiva Āgamas — 28 Canonical Texts</a>
+    <a class="navlink" data-target="s-shakta-agamas">§3 · Śākta Tantras — The Goddess Traditions</a>
+    <a class="navlink" data-target="s-vaishnava-agamas">§4 · Vaiṣṇava Āgamas — Pāñcarātra &amp; Vaikhānasa</a>
+    <a class="navlink" data-target="s-matrika">§5 · Mātṛkānyāsa — Sound-Body Mapping as Śāstra</a>
+    <a class="navlink" data-target="s-abhinavagupta">§6 · Abhinavagupta — The Trika System</a>
+    <a class="navlink" data-target="s-agama-vs-veda">§7 · Āgama vs. Veda — Authority Contested</a>
+    <a class="navlink" data-target="s-chrono3">§8 · Master Chronology III</a>
+  </div>
+  <div class="series-nav">
+    <div class="sn-label">Five‑Part Series</div>
+    <a href="shastra-series-part1.html">Part I · Origins &amp; Vedic Śāstras</a>
+    <a href="shastra-series-part2.html">Part II · Classical Śāstras</a>
+    <a href="shastra-series-part3.html" class="current">Part III · Tantric &amp; Āgamic Śāstras</a>
+    <a href="shastra-series-part4.html">Part IV · Medieval Synthesis</a>
+    <a href="shastra-series-part5.html">Part V · Modern Continuity</a>
+  </div>
+</nav>
+<main class="main">
+<div class="breadcrumb">
+  culturalmusings.com <span style="color:var(--border)">/</span> शास्त्रोद्भवः <span style="color:var(--border)">/</span>
+  <span class="cur" id="crumb">Abstract</span>
+  <span class="wp-label">White Paper · Part III</span>
+</div>
+<div class="tabbar" id="tabbar">
+  <button class="tabbtn" data-target="s-abstract3">Abstract</button>
+  <button class="tabbtn" data-target="s-agama-taxonomy">§1 Taxonomy</button>
+  <button class="tabbtn" data-target="s-shaiva-agamas">§2 Śaiva</button>
+  <button class="tabbtn" data-target="s-shakta-agamas">§3 Śākta</button>
+  <button class="tabbtn" data-target="s-vaishnava-agamas">§4 Vaiṣṇava</button>
+  <button class="tabbtn" data-target="s-matrika">§5 Mātṛkā</button>
+  <button class="tabbtn" data-target="s-abhinavagupta">§6 Abhinavagupta</button>
+  <button class="tabbtn" data-target="s-agama-vs-veda">§7 Āgama vs. Veda</button>
+  <button class="tabbtn" data-target="s-chrono3">§8 Chronology</button>
+</div>
+<div id="sections-root">
+
+<!-- ABSTRACT -->
+<section class="section" id="s-abstract3">
+  <div class="wp-header">
+    <div class="series-tag">Research Paper · Part III of V · Cultural Musings — Śāstrodbhavaḥ Series</div>
+    <span class="dn-title">आगमशास्त्रम् — The Āgamic Revelation</span>
+    <h2>The Tantric and Āgamic Śāstras: A Parallel Revelatory Tradition</h2>
+    <div class="wp-meta">
+      <div class="wp-meta-item"><strong>Period Covered:</strong> c. 200 BCE – 1200 CE (peak production)</div>
+      <div class="wp-meta-item"><strong>Traditions:</strong> Śaiva, Śākta, Vaiṣṇava Āgamas; Kashmir Trika; Kubjikā; Srīvidyā</div>
+      <div class="wp-meta-item"><strong>Key Figures:</strong> Abhinavagupta, Kṣemarāja, Jayaratha, Matsyendranātha</div>
+      <div class="wp-meta-item"><strong>Series Part:</strong> III of V</div>
+    </div>
+  </div>
+
+  <div class="section-heading"><span class="num">0.1</span>Abstract</div>
+  <p class="abstract">Alongside the Vedic-śāstric tradition examined in Parts I and II, Indian civilisation produced a second, equally vast revelatory corpus: the Āgamas and Tantras. These texts — claiming revelation by Śiva, the Goddess, or Viṣṇu directly — constitute a parallel śāstric universe with its own ontology, ritual science, iconography, and philosophical frameworks. This paper examines how the Āgamic traditions constitute <em>śāstras</em> in the technical sense: systematised, rule-governed, generative disciplines with explicit methodologies. The paper traces the three principal streams (Śaiva, Śākta, Vaiṣṇava), examines the extraordinary philosophical synthesis of Abhinavagupta's Kashmir Śaivism, and addresses the contested question of the relationship between Āgamic and Vedic authority.</p>
+
+  <div class="stats-row">
+    <div class="stat-card"><div class="sv">64+</div><div class="sl">Śākta Tantras in the traditional enumeration of the Śāktāgama corpus</div></div>
+    <div class="stat-card"><div class="sv">28</div><div class="sl">Śaiva Āgamas in the canonical Siddhānta list, each with its own sub-texts (Upāgamas)</div></div>
+    <div class="stat-card"><div class="sv">108</div><div class="sl">Vaiṣṇava Pāñcarātra Saṃhitās in the traditional enumeration</div></div>
+    <div class="stat-card"><div class="sv">36</div><div class="sl">Tattvas (categories of reality) in Abhinavagupta's Kashmir Śaiva ontology</div></div>
+  </div>
+
+  <div class="callout">
+    <div class="cl-head">The Central Question of Part III</div>
+    <p style="font-size:15.5px;">The Āgamas claim to be <em>apauruṣeya</em> — divine revelation — just as the Veda does. But the Āgamas were rejected by many Vedic authorities as extra-Vedic and therefore unauthoritative. This creates the most interesting authority-conflict in the entire Indian intellectual tradition: two bodies of revelatory literature, each claiming the highest possible epistemic status, each internally consistent, serving different ritual and philosophical communities. How the tradition navigated this conflict — and how Abhinavagupta's synthesis attempted to subsume the Vedic tradition within the Tantric — is one of the most important stories in Indian intellectual history.</p>
+  </div>
+
+  <div class="footer-nav">
+    <a class="fn-btn" href="shastra-series-part2.html">← Part II: Classical Śāstras</a>
+    <span class="fn-btn" onclick="showSection('s-agama-taxonomy')">Next: §1 Āgama Taxonomy →</span>
+  </div>
+</section>
+
+<!-- §1 AGAMA TAXONOMY -->
+<section class="section hidden" id="s-agama-taxonomy">
+  <div class="section-heading"><span class="num">§ 1</span>Āgama Taxonomy</div>
+  <h2 class="article-title">What Is an Āgama? Defining a Second Revelatory Canon</h2>
+  <p>The word <span class="iast">āgama</span> derives from the root <span class="iast">ā + gam</span> ("to come toward") — that which has come down, descended, been transmitted. In its technical sense within Indian religious literature, an āgama is a text claiming divine origin — revelation from Śiva, the Goddess, or Viṣṇu — that provides authoritative instruction in four domains (catuspāda, "four feet") that together constitute a complete religious system.</p>
+
+  <div class="panel tantric">
+    <h3>The Four Pādas (Sections) of a Complete Āgama</h3>
+    <table class="chron">
+      <thead><tr><th>Pāda</th><th>Sanskrit</th><th>Content</th><th>Śāstric Character</th></tr></thead>
+      <tbody>
+        <tr><td class="shastra">Jñānapāda</td><td><span class="dn" style="font-size:14px;">ज्ञानपाद</span></td><td>Philosophical doctrine — the nature of the supreme being, the soul, and matter; cosmogony and eschatology</td><td class="note">Equivalent to darśana (philosophy) in the Vedic system; provides the theoretical framework from which all ritual prescription is derived</td></tr>
+        <tr><td class="shastra">Yogapāda</td><td><span class="dn" style="font-size:14px;">योगपाद</span></td><td>Meditative and contemplative practice — internal ritual, visualisation, mantra practice, prāṇāyāma</td><td class="note">Equivalent to the Upaniṣadic/Vedāntic inward turn; the experiential dimension of the revelatory teaching</td></tr>
+        <tr><td class="shastra">Kriyāpāda</td><td><span class="dn" style="font-size:14px;">क्रियापाद</span></td><td>Ritual procedure — external worship, temple construction, icon installation, festival cycles</td><td class="note">Equivalent to the Vedic Kalpa Sūtra tradition; the prescriptive ritual science of the Āgama</td></tr>
+        <tr><td class="shastra">Caryāpāda</td><td><span class="dn" style="font-size:14px;">चर्यापाद</span></td><td>Conduct and social regulation — daily routine, diet, dress, life-stage duties for the initiated</td><td class="note">Equivalent to Dharmaśāstra for the Āgamic community; normative social regulation within the tradition</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:14.5px;margin-top:12px;">The four-pāda structure is the Āgamic equivalent of the śāstric enterprise: a complete, internally integrated system that provides not merely a theology but a complete way of life — cosmology, practice, ritual, and social norm — in a single revelatory framework. This is precisely what makes the Āgamas śāstras rather than mere religious texts: they aspire to, and largely achieve, <em>systematic completeness</em>.</p>
+  </div>
+
+  <h3 class="sub-title">1.1 The Vedic–Āgamic Divide — A Structural Comparison</h3>
+  <table class="compare">
+    <thead><tr><th>Dimension</th><th>Vedic Śāstra Tradition</th><th>Āgamic Śāstra Tradition</th></tr></thead>
+    <tbody>
+      <tr><td>Source of authority</td><td>Śruti (apauruṣeya Veda) + Smṛti (human reasoning from it)</td><td>Direct divine revelation from Śiva / Devī / Viṣṇu (also apauruṣeya in their self-presentation)</td></tr>
+      <tr><td>Transmission mode</td><td>Student-teacher oral chain; school (śākhā) system</td><td>Guru-śiṣya (master-disciple) initiation chain; dīkṣā (initiation) as prerequisite for full access</td></tr>
+      <tr><td>Social access</td><td>Principally brahmins (dvija); varṇa-restricted for ritual roles</td><td>Initiation (dīkṣā) as the sole criterion; theoretically open across varṇa for the inner teachings</td></tr>
+      <tr><td>Ritual centre</td><td>The fire (agni); homa/yajña; outdoor or domestic hearth</td><td>The image/icon (mūrti); the temple; the yantra (geometric diagram)</td></tr>
+      <tr><td>Cosmological model</td><td>Ṛta (cosmic order), devas as cosmic forces; Brahman as ultimate ground (in Vedānta)</td><td>Śiva/Śakti or Viṣṇu as the dynamic divine pair; tattva hierarchy descending from supreme consciousness to matter</td></tr>
+      <tr><td>Goal of practice</td><td>Svarga (heaven) for ritual; mokṣa (liberation) for Vedānta</td><td>Both bhukti (enjoyment of cosmic powers) and mukti (liberation) as valid goals; Śiva-sāyujya (identity with Śiva)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-abstract3')">← Abstract</span>
+    <span class="fn-btn" onclick="showSection('s-shaiva-agamas')">Next: §2 Śaiva Āgamas →</span>
+  </div>
+</section>
+
+<!-- §2 SHAIVA AGAMAS -->
+<section class="section hidden" id="s-shaiva-agamas">
+  <div class="section-heading"><span class="num">§ 2</span>Śaiva Āgamas</div>
+  <h2 class="article-title">The 28 Śaiva Āgamas — Architecture of a Divine Corpus</h2>
+  <p>The Śaiva Āgamas present themselves as Śiva's direct verbal revelation, transmitted downward through a divine hierarchy (from Śiva to Sadāśiva to Ananta to the human teachers) and then transmitted upward from teacher to initiated disciple. The Siddhānta (or Śaivasiddhānta) tradition recognises 28 "root" Āgamas, each with hundreds of sub-texts (Upāgamas and Paddhatis), constituting a corpus larger in raw volume than the Vedic tradition.</p>
+
+  <div class="panel">
+    <h3>The 28 Śaiva Āgamas — Selected Primary Texts</h3>
+    <table class="chron">
+      <thead><tr><th>Āgama</th><th>Character</th><th>Surviving Text</th><th>Primary Focus</th></tr></thead>
+      <tbody>
+        <tr><td class="shastra">Kāmikāgama</td><td>First of the 28; considered most comprehensive</td><td>Both pūrvabhāga and uttarabhāga survive; published by Śaiva Siddhānta Works</td><td class="note">Temple construction, icon installation, worship procedure, mantra-śāstra; enormous scope across all four pādas</td></tr>
+        <tr><td class="shastra">Mṛgendragama</td><td>Among the best preserved; Nārāyaṇakaṇṭha's 10th-c. commentary survives</td><td>Jñānapāda and Kriyāpāda complete</td><td class="note">Particularly important for its philosophical jñānapāda — the Śaivasiddhānta doctrine of three reals (pati, paśu, pāśa)</td></tr>
+        <tr><td class="shastra">Paushkarāgama</td><td>Considered highest in authority by some schools</td><td>Partial</td><td class="note">Philosophical discussions; the three mala (impurity) doctrine central to Siddhānta soteriology</td></tr>
+        <tr><td class="shastra">Rauravāgama</td><td>Important for South Indian temple tradition</td><td>Largely surviving</td><td class="note">Detailed kriyāpāda covering icon forms, temple architecture (vāstupuruṣamaṇḍala), and festival ritual</td></tr>
+        <tr><td class="shastra">Svāyambhuvāgama</td><td>Attributed directly to the self-born Śiva</td><td>Partial</td><td class="note">Important for the Śaiva theory of initiation types (dīkṣā) and their liberating functions</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel case-study">
+    <div class="cs-header">
+      <div class="cs-num">CS·8</div>
+      <div class="cs-meta">
+        <div class="cs-label">Case Study 8 · Śaiva Philosophy</div>
+        <h3>Pati–Paśu–Pāśa — The Three-Real Ontology of Śaivasiddhānta</h3>
+        <div class="cs-sub">Mṛgendragama Jñānapāda §§2–6 — The foundational metaphysical structure</div>
+      </div>
+    </div>
+    <p>The philosophical foundation of Śaivasiddhānta rests on a three-term ontology that is as elegant and as structurally precise as any metaphysical system in the classical Indian tradition:</p>
+    <div class="grid3">
+      <div class="panel" style="text-align:center;border-color:var(--tantric);">
+        <div style="font-size:36px;font-family:'Noto Serif Devanagari';color:var(--tantric-bright);">पति</div>
+        <div style="font-family:'Cinzel';font-size:14px;color:var(--tantric-bright);margin:8px 0;">Pati — The Lord</div>
+        <div style="font-size:13.5px;color:var(--text-dim);">Śiva, the supreme — pure, eternal, omniscient, omnipotent, perfectly free. His nature is <span class="iast">cit</span> (pure consciousness) and <span class="iast">ānanda</span> (bliss).</div>
+      </div>
+      <div class="panel" style="text-align:center;border-color:var(--jade-bright);">
+        <div style="font-size:36px;font-family:'Noto Serif Devanagari';color:var(--jade-bright);">पशु</div>
+        <div style="font-family:'Cinzel';font-size:14px;color:var(--jade-bright);margin:8px 0;">Paśu — The Bound</div>
+        <div style="font-size:13.5px;color:var(--text-dim);">The individual soul — in itself pure and of the same consciousness-nature as Śiva, but currently bound by the three malas (impurities). Not fundamentally different from Śiva, only obscured.</div>
+      </div>
+      <div class="panel" style="text-align:center;border-color:var(--gold);">
+        <div style="font-size:36px;font-family:'Noto Serif Devanagari';color:var(--gold-bright);">पाश</div>
+        <div style="font-family:'Cinzel';font-size:14px;color:var(--gold-bright);margin:8px 0;">Pāśa — The Bond</div>
+        <div style="font-size:13.5px;color:var(--text-dim);">The three binding forces — āṇavamala (the primordial contraction of consciousness), māyīyamala (matter/differentiation), and kārmamala (the karmic accretion) — that obscure the soul's Śiva-nature.</div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:16px;">
+      <div class="cl-head">The Soteriological Architecture</div>
+      <p style="font-size:14.5px;">The Śaivasiddhānta soteriology is a logical derivation from these three reals. Liberation (mukti) consists in the removal of the three malas by Śiva's grace (anugraha), mediated by dīkṣā (initiation). The theological distinction from Advaita Vedānta is precise: in Advaita, the individual soul <em>is</em> Brahman and liberation consists in recognising this. In Śaivasiddhānta, the soul <em>resembles</em> Śiva but is not identical with him — liberation consists in a state of Śiva-like consciousness (śiva-sāyujya) rather than metaphysical identity. The debate between these two positions — Advaita absorption versus Siddhānta resemblance — drove some of the most technically precise metaphysical argument in medieval Indian philosophy.</p>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-agama-taxonomy')">← §1 Taxonomy</span>
+    <span class="fn-btn" onclick="showSection('s-shakta-agamas')">Next: §3 Śākta →</span>
+  </div>
+</section>
+
+<!-- §3 SHAKTA -->
+<section class="section hidden" id="s-shakta-agamas">
+  <div class="section-heading"><span class="num">§ 3</span>Śākta Tantras</div>
+  <h2 class="article-title">The Goddess as the Śāstra: Śākta Tantra and the Topology of Power</h2>
+  <p>The Śākta Tantric tradition situates the supreme reality not as a transcendent male deity (Śiva) or an impersonal absolute (Brahman) but as the dynamic, creative, all-encompassing power of the Goddess (Śakti, Devī). In Śākta metaphysics, all of reality is understood as the Goddess's self-expression — consciousness and the world are not two things to be related but one thing in two modes, inner and outer, awareness and its own appearance.</p>
+
+  <div class="panel tantric">
+    <h3>The Śrīvidyā Tradition — A Case Study in Śākta Śāstra</h3>
+    <p>Among the many Śākta Tantric traditions, the <span class="iast">Śrīvidyā</span> school is the most systematically śāstric in its organisation. Its central text, the <span class="iast">Parasurāma-Kalpasūtra</span> (c. 15th century CE in its present form, though drawing on much older material), presents the entire tradition of Goddess worship as a structured system derivable from three primary elements:</p>
+    <div class="grid3">
+      <div class="panel" style="text-align:center;">
+        <div style="font-size:13px;font-family:'Cinzel';color:var(--tantric-bright);margin-bottom:8px;">Mantra</div>
+        <div class="dn" style="font-size:16px;color:var(--gold-bright);margin-bottom:6px;">मन्त्र</div>
+        <div style="font-size:13.5px;color:var(--text-dim);">The Śrīvidyā mantra (15 or 16 syllables) — encoding the three kūṭas (clusters) corresponding to desire, wisdom, and action. The mantra <em>is</em> the Goddess in sonic form.</div>
+      </div>
+      <div class="panel" style="text-align:center;">
+        <div style="font-size:13px;font-family:'Cinzel';color:var(--tantric-bright);margin-bottom:8px;">Yantra</div>
+        <div class="dn" style="font-size:16px;color:var(--gold-bright);margin-bottom:6px;">यन्त्र</div>
+        <div style="font-size:13.5px;color:var(--text-dim);">The Śrī Yantra — nine interlocking triangles (four pointing upward for Śiva, five for Śakti) generating 43 smaller triangles and encircled by lotus petals. The yantra <em>is</em> the Goddess in geometric form.</div>
+      </div>
+      <div class="panel" style="text-align:center;">
+        <div style="font-size:13px;font-family:'Cinzel';color:var(--tantric-bright);margin-bottom:8px;">Pūjā</div>
+        <div class="dn" style="font-size:16px;color:var(--gold-bright);margin-bottom:6px;">पूजा</div>
+        <div style="font-size:13.5px;color:var(--text-dim);">The nine-circuit (navaāvaraṇa) worship of the Śrī Yantra — a precisely choreographed ritual movement from the outer circuits to the central bindu point, mirroring the meditator's inward journey to the source.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel case-study">
+    <div class="cs-header">
+      <div class="cs-num">CS·9</div>
+      <div class="cs-meta">
+        <div class="cs-label">Case Study 9 · Geometric Śāstra</div>
+        <h3>The Śrī Yantra as a Mathematical Object — Sacred Geometry as Śāstric Precision</h3>
+        <div class="cs-sub">Navaāvaraṇa structure — intersection geometry and its cosmological significance</div>
+      </div>
+    </div>
+    <p>The Śrī Yantra is not merely a symbolic diagram — it is a precisely specified geometric object whose construction requires exact mathematical relationships that the Tantric tradition encodes in its ritual texts. The nine triangles of the Śrī Yantra must intersect at precise angles to generate exactly 43 smaller triangles — an overcount or undercount signals an error in the drawing.</p>
+    <p>The Tantric texts specify the construction through a series of precise ratios (described in terms of finger-measure, <span class="iast">aṅgula</span>) that, when followed correctly, produce the exact geometry. Modern mathematical analysis (Kulaichev, 1984; Huet, 2015) has confirmed that the Śrī Yantra's intersection conditions impose a highly constrained system of nine simultaneous equations on the triangle vertices — a system with a unique solution that cannot be found by approximate or intuitive construction.</p>
+    <div class="callout">
+      <div class="cl-head">The Śāstric Significance</div>
+      <p style="font-size:14.5px;">The mathematical precision required by the Śrī Yantra's construction is not separate from its religious significance — it <em>is</em> the religious significance. The Tantric tradition's claim is that the Goddess's self-manifestation follows precise mathematical laws: the cosmos has the same structure as the yantra, and the yantra has the same structure as the mantra, and the mantra has the same structure as the practitioner's own consciousness. The śāstric project of exact specification is here at its most radical: the entire cosmos is mappable onto a formally specifiable geometric object, and that specification is the śāstra.</p>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-shaiva-agamas')">← §2 Śaiva</span>
+    <span class="fn-btn" onclick="showSection('s-vaishnava-agamas')">Next: §4 Vaiṣṇava →</span>
+  </div>
+</section>
+
+<!-- §4 VAISHNAVA -->
+<section class="section hidden" id="s-vaishnava-agamas">
+  <div class="section-heading"><span class="num">§ 4</span>Vaiṣṇava Āgamas</div>
+  <h2 class="article-title">Pāñcarātra and Vaikhānasa — The Two Vaiṣṇava Āgamic Schools</h2>
+  <p>The Vaiṣṇava Āgamic tradition is divided into two principal schools — the <span class="iast">Pāñcarātra</span> and the <span class="iast">Vaikhānasa</span> — each claiming divine authority and each producing its own extensive śāstric literature governing Vaiṣṇava temple worship, theology, and daily practice. Both schools have profound living significance: the great Vaiṣṇava temples of South India (Tirumala-Tirupati, Śrīraṅgam, Kāñcīpuram) follow either Pāñcarātra or Vaikhānasa rites.</p>
+
+  <div class="grid2">
+    <div class="panel tantric">
+      <h3>Pāñcarātra — The Five-Night Revelation</h3>
+      <p>The Pāñcarātra tradition claims that Nārāyaṇa revealed its teachings over five nights (pañca-rātra). The 108 Pāñcarātra Saṃhitās (of which around 30 survive in readable form) constitute the most comprehensive Vaiṣṇava Āgamic corpus. Key texts include the Ahirbudhnyasaṃhitā (philosophical), the Pāñcarātraraksā of Vedānta Deśika (apologetic), and the Jayākhyasaṃhitā (cosmological).</p>
+      <p style="font-size:14.5px;">The Pāñcarātra's distinctive theological contribution is the Vyūha theory: Viṣṇu/Vāsudeva manifests in four cosmic "arrays" or emanations (Vāsudeva, Saṃkarṣaṇa, Pradyumna, Aniruddha), each presiding over one dimension of reality (consciousness, individual soul, mind, ego). This four-fold emanation structure was controversial — Śaṅkarācārya (8th century CE) attacked it in his Brahmasūtra commentary as incompatible with non-dualism — and Rāmānuja (11th century) devoted considerable effort to defending it.</p>
+    </div>
+    <div class="panel tantric">
+      <h3>Vaikhānasa — The Primordial Śāstra of Vikhanas</h3>
+      <p>The Vaikhānasa tradition claims that its founder, the sage Vikhanas, received the teaching directly from Viṣṇu in his primordial form. Vaikhānasa texts (Vikhanasmārca, Vikhanas Āgama, Marīcisaṃhitā, Ātrisaṃhitā, Bhṛgusaṃhitā, Kāśyapasaṃhitā) are the liturgical authority for several of the most important South Indian Vaiṣṇava temples.</p>
+      <p style="font-size:14.5px;">The Vaikhānasa–Pāñcarātra rivalry over ritual authority in South Indian temples has generated one of the most practically consequential śāstric debates of the medieval and modern periods. The question of which school's rites are "more Vedic" and therefore more appropriate for use in specific temples has been litigated in Indian courts as recently as the 21st century — making it a genuinely living śāstric controversy.</p>
+    </div>
+  </div>
+
+  <div class="panel case-study">
+    <div class="cs-header">
+      <div class="cs-num">CS·10</div>
+      <div class="cs-meta">
+        <div class="cs-label">Case Study 10 · Living Tradition</div>
+        <h3>The Tirumala-Tirupati Controversy — Āgamic Authority in the Modern Court</h3>
+        <div class="cs-sub">A documented 20th–21st century legal and ritual dispute over Āgamic śāstric authority</div>
+      </div>
+    </div>
+    <p>The Tirumala Tirupati Devasthanams (TTD), which administers the Venkateśvara temple — the wealthiest religious institution in the world — has been the site of an ongoing controversy over whether the temple should follow Vaikhānasa or Pāñcarātra rites for its principal deity's worship.</p>
+    <p>The historical facts: Tirupati's Venkateśvara temple has traditionally been served by Vaikhānasa priests. During the 20th century, questions arose about whether certain ritual procedures actually followed the Vaikhānasa Āgama correctly. The Andhra Pradesh government appointed committees, commissioned śāstric scholars to examine the Āgamic texts, and eventually issued guidelines.</p>
+    <div class="callout">
+      <div class="cl-head">What This Case Demonstrates</div>
+      <p style="font-size:14.5px;">The Tirupati case demonstrates that Āgamic śāstras are not historical texts — they are living legal documents whose exact prescriptions are contested, interpreted, and enforced in the present day. The question "which Āgama's rite is correct?" is not an academic question: it determines who has the right to perform worship, what procedures are followed, and how the world's most visited religious site operates. This is the śāstric tradition at its most alive.</p>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-shakta-agamas')">← §3 Śākta</span>
+    <span class="fn-btn" onclick="showSection('s-matrika')">Next: §5 Mātṛkā →</span>
+  </div>
+</section>
+
+<!-- §5 MATRIKA -->
+<section class="section hidden" id="s-matrika">
+  <div class="section-heading"><span class="num">§ 5</span>Mātṛkānyāsa</div>
+  <h2 class="article-title">Mātṛkānyāsa — The Phonetic Map of the Body as Śāstric Synthesis</h2>
+  <p>The practice of <span class="iast">mātṛkānyāsa</span> — the ritual "imposition" (nyāsa) of the fifty Sanskrit phoneme-deities (mātṛkās, "little mothers") onto specific locations of the practitioner's body — is the most precise intersection point between three śāstric traditions examined in this series: Vedic phonetic science (Part I's Śikṣā and Prātiśākhya tradition), Tantric body-theology (Part III's Āgamic framework), and Śaiva philosophical ontology (Abhinavagupta's Kashmir system).</p>
+
+  <div class="panel tantric">
+    <h3>The Mātṛkā Doctrine — Phonemes as Cosmic Constituents</h3>
+    <p>The foundational claim of the mātṛkā doctrine is this: the fifty Sanskrit phonemes are not merely units of sound-as-language. They are the fifty constituent powers of the cosmos itself — the fundamental vibrations from which all reality (both linguistic and physical) is woven. The human body, understood as a microcosm of the universe, contains these same fifty powers distributed across its surface and interior.</p>
+    <div class="sanskrit-block">
+      अकारादिक्षकारान्तं मातृकाचक्रमुच्यते ।<br>
+      तत्सर्वं शिवरूपं हि शिवशक्त्यात्मकं जगत् ॥
+    </div>
+    <p class="gloss">"From a-kāra to kṣa-kāra — that is called the Mātṛkācakra. All of that is indeed of the form of Śiva; the universe has Śiva and Śakti as its very self." (Tantric synthesis of phonology and cosmology)</p>
+  </div>
+
+  <div class="panel case-study">
+    <div class="cs-header">
+      <div class="cs-num">CS·11</div>
+      <div class="cs-meta">
+        <div class="cs-label">Case Study 11 · Ritual Phonology</div>
+        <h3>From Prātiśākhya to Nyāsa — Phonetics Transformed into Somatic Theology</h3>
+        <div class="cs-sub">Tracing the transformation of Vedic phonological categories into Tantric body-mapping</div>
+      </div>
+    </div>
+    <p>This case study traces a specific, documentable intellectual genealogy: the transformation of the Vedic phonological classification system (Part I, §4) into the Tantric mātṛkānyāsa framework.</p>
+    <p><strong>Stage 1 — Vedic Phonetics:</strong> The Prātiśākhyas classify Sanskrit's phonemes by place and manner of articulation, grouping them into natural classes (vowels, stops, fricatives, semivowels, nasals). This classification, refined by Pāṇini's Śivasūtras (Part II, §1), represents the most precise phonological analysis of any language in the ancient world.</p>
+    <p><strong>Stage 2 — Tantric Revaluation:</strong> The early Tantric texts (Mālinīvijayottaratantra, c. 5th–8th century CE) take this same phonological inventory and assign each phoneme a cosmological and soteriological significance. The vowels (a to ah) are identified with the levels of consciousness; the consonants are identified with the tattvas (categories of reality) in descending order from Śiva to the earth-element.</p>
+    <p><strong>Stage 3 — Nyāsa Integration:</strong> The mātṛkānyāsa ritual maps this double-classified phoneme inventory (phonological + cosmological) onto the practitioner's body through precise touch. The vowels are placed on the head; the guttural stops on the mouth; the palatals on the throat; the retroflexes on the chest; the dentals on the navel; the labials on the knees; and so on.</p>
+    <div class="callout">
+      <div class="cl-head">The Synthesis Achievement</div>
+      <p style="font-size:14.5px;">Mātṛkānyāsa is, in śāstric terms, a remarkable synthesis: it takes the most technically rigorous phonological tradition (Vedic Śikṣā), combines it with a complete metaphysical cosmology (Śaiva tattva doctrine), and produces a ritual practice that simultaneously is a meditation on the structure of language, the structure of reality, and the structure of the practitioner's own body. No other tradition in human history has achieved this three-way convergence at comparable levels of technical precision. The Śabda-Brahman philosophical claim — that sound is the generative matrix of reality — receives here its most concrete, most practically enacted expression.</p>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-vaishnava-agamas')">← §4 Vaiṣṇava</span>
+    <span class="fn-btn" onclick="showSection('s-abhinavagupta')">Next: §6 Abhinavagupta →</span>
+  </div>
+</section>
+
+<!-- §6 ABHINAVAGUPTA -->
+<section class="section hidden" id="s-abhinavagupta">
+  <div class="section-heading"><span class="num">§ 6</span>Abhinavagupta</div>
+  <h2 class="article-title">Abhinavagupta (c. 950–1020 CE) — The Greatest Synthesiser in Indian Intellectual History</h2>
+  <p>Abhinavagupta stands in a class of his own in the Indian intellectual tradition: a philosopher of the first rank who was simultaneously a poet, an aesthetician, a musician, a Tantric adept, and the author of the most comprehensive philosophical synthesis the Sanskrit tradition has produced. In approximately three decades of writing, he produced three works of epochal importance: the <span class="iast">Tantrāloka</span> (37 chapters — the fullest systematic statement of Kashmir Śaiva practice and philosophy), the <span class="iast">Mālinīvijayavārttika</span> (commentary on a key Āgama), and the <span class="iast">Abhinavabhāratī</span> (the definitive commentary on the Nāṭyaśāstra, examined in Part II §7).</p>
+
+  <div class="panel research">
+    <h3>The Trika System — Recognition Philosophy (Pratyabhijñā)</h3>
+    <p>Abhinavagupta's philosophical position — building on Utpaladeva's <span class="iast">Pratyabhijñākārikā</span> (c. 900–950 CE) — is called the <span class="iast">Pratyabhijñā</span> ("recognition") school of Kashmir Śaivism. Its central claim is both philosophically original and practically consequential:</p>
+    <blockquote>
+      The individual consciousness has never actually lost its nature as the supreme Śiva-consciousness. What has happened is not a real fall or limitation, but a "contraction" (saṃkoca) — a self-induced narrowing of attention — that makes the infinite appear finite. Liberation is not the acquisition of something new but the re-cognition (pratyabhijñā) of what one has always been.
+    </blockquote>
+    <p>This is a philosophically precise position, distinguishable from both Advaita Vedānta (which also claims identity of self and absolute, but through a different epistemological path) and from Śaivasiddhānta (which, as examined in §2, insists on the soul's resemblance but not identity with Śiva). The pratyabhijñā position's distinctive claim is that the <em>epistemological act of recognition itself</em> is the liberating event — understanding the truth is the same as being free.</p>
+  </div>
+
+  <div class="panel case-study">
+    <div class="cs-header">
+      <div class="cs-num">CS·12</div>
+      <div class="cs-meta">
+        <div class="cs-label">Case Study 12 · Philosophical Synthesis</div>
+        <h3>The Thirty-Six Tattvas — Abhinavagupta's Ontological Map</h3>
+        <div class="cs-sub">Tantrāloka Chapter 9 — The complete taxonomy of reality from Śiva to earth</div>
+      </div>
+    </div>
+    <p>Abhinavagupta's Kashmir Śaiva system accepts a 36-tattva cosmological hierarchy — extending the classical Sāṃkhya's 25 tattvas by adding 11 additional "pure" (śuddha) tattvas that describe the levels of divine consciousness above and below the point of cosmic manifestation. This is not merely an expansion of a previous system; it is a reconstruction from first principles of the entire ontological architecture.</p>
+    <table class="chron">
+      <thead><tr><th>Level</th><th>Tattvas</th><th>Domain</th><th>Significance</th></tr></thead>
+      <tbody>
+        <tr><td class="era">Pure (1–5)</td><td class="shastra">Śiva, Śakti, Sadāśiva, Īśvara, Suddhavidyā</td><td>The levels of undivided divine consciousness before any subject-object polarisation</td><td class="note">These five represent states of consciousness with increasing "objectification" — from Śiva's pure, contentless awareness to a faint subject-object distinction</td></tr>
+        <tr><td class="era">Mixed (6–11)</td><td class="shastra">Māyā, Kalā, Vidyā, Rāga, Kāla, Niyati</td><td>The six "covers" (kañcukas) that produce the contracted, limited individual</td><td class="note">These are not external bonds but self-imposed constraints of consciousness — the mechanisms by which infinite awareness produces finite experience</td></tr>
+        <tr><td class="era">Impure (12–36)</td><td class="shastra">Puruṣa, Prakṛti, then Sāṃkhya's 23 tattvas</td><td>The domain of individual consciousness and material reality — the world of ordinary experience</td><td class="note">Abhinavagupta integrates classical Sāṃkhya cosmology into his system as the lower two-thirds of the ontological hierarchy</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <div class="cl-head">The Synthesising Achievement</div>
+      <p style="font-size:14.5px;">Abhinavagupta's 36-tattva system achieves what no previous system had managed: it integrates Sāṃkhya's carefully analysed material cosmology (the 25 tattvas), Śaiva Siddhānta's doctrine of divine grace and the three malas, the Pāñcarātra's emanation theology, and the Pratyabhijñā recognition philosophy into a single, internally consistent framework. The integration is not an eclectic patchwork; each system is shown to be the description of a specific level or aspect of a single reality. This is śāstric synthesis at its most ambitious.</p>
+    </div>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-matrika')">← §5 Mātṛkā</span>
+    <span class="fn-btn" onclick="showSection('s-agama-vs-veda')">Next: §7 Āgama vs. Veda →</span>
+  </div>
+</section>
+
+<!-- §7 AGAMA VS VEDA -->
+<section class="section hidden" id="s-agama-vs-veda">
+  <div class="section-heading"><span class="num">§ 7</span>Āgama vs. Veda</div>
+  <h2 class="article-title">The Authority Question — Two Revelations, One Tradition</h2>
+  <p>The relationship between the Vedic śāstric tradition (Parts I–II) and the Āgamic śāstric tradition (Part III) is one of the most consequential — and most precisely argued — questions in Indian intellectual history. Both traditions claim the highest authority (divine revelation); both operate through formally organised śāstric systems; and yet their ontologies, ritual procedures, and social structures are, in important respects, incompatible.</p>
+
+  <div class="panel">
+    <h3>Five Positions on the Veda–Āgama Relationship</h3>
+    <table class="compare">
+      <thead><tr><th>Position</th><th>Proponent</th><th>Key Argument</th><th>Resolution Strategy</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Subordination of Āgama to Veda</strong></td><td>Śaṅkarācārya; Mīmāṃsakas</td><td>The Āgamas contradict Vedic authority on ritual and social norms; they must therefore be rejected or at best treated as secondary smṛti</td><td>Reject Āgamic claims where they conflict; accept only what is compatible with Vedic injunction</td></tr>
+        <tr><td><strong>Subordination of Veda to Āgama</strong></td><td>Extreme Śaiva Siddhānta positions</td><td>The Āgamas are Śiva's direct revelation and supersede the Veda, which is a revelation for the uninitiated</td><td>Accept Āgamic teaching as supreme; treat Veda as a preliminary stage</td></tr>
+        <tr><td><strong>Independence of the Two</strong></td><td>Rāmānuja; Vedānta Deśika</td><td>The Āgamas operate in their own domain (temple worship, initiation) while the Veda operates in its domain (sacrifice, daily duty); they are parallel, not conflicting</td><td>Domain-separation: different authoritative systems for different spheres of life</td></tr>
+        <tr><td><strong>Āgama as Veda's Esoteric Dimension</strong></td><td>Abhinavagupta; some Śrīvidyā authors</td><td>The Āgamas do not contradict the Veda — they reveal the inner meaning that the Veda's exoteric rites point toward but do not make explicit</td><td>Hermeneutic subsumption: the Āgama is the Veda fully understood</td></tr>
+        <tr><td><strong>Synthetic Non-Dualism</strong></td><td>Later Advaita commentators; Tantra-incorporating Vedāntins</td><td>Both Veda and Āgama are conventional means (upāya) to the same ultimate non-dual reality; neither has absolute authority, but both have provisional authority</td><td>Both traditions are integrated at the level of the ultimate goal; disagreements are about method, not destination</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>The five positions demonstrate that the Veda–Āgama controversy is not resolved — it is <em>productively unresolved</em>. Each position generates its own extensive śāstric literature of argument and counter-argument. The tradition does not need to resolve the controversy to function; it needs only to maintain the precision and rigour of the debate. This is perhaps the defining feature of the śāstric tradition as a whole: it is a tradition of productive, formally conducted disagreement, not of imposed consensus.</p>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-abhinavagupta')">← §6 Abhinavagupta</span>
+    <span class="fn-btn" onclick="showSection('s-chrono3')">Next: §8 Chronology →</span>
+  </div>
+</section>
+
+<!-- §8 CHRONOLOGY -->
+<section class="section hidden" id="s-chrono3">
+  <div class="section-heading"><span class="num">§ 8</span>Master Chronology III</div>
+  <h2 class="article-title">Reference Chronology III: Āgamic and Tantric Period (~200 BCE – 1200 CE)</h2>
+
+  <div class="panel">
+    <h3>Āgamic &amp; Tantric Period Timeline</h3>
+    <table class="chron">
+      <thead><tr><th style="width:17%">Date</th><th style="width:25%">Text / Event</th><th style="width:18%">Tradition</th><th>Significance</th></tr></thead>
+      <tbody>
+        <tr><td class="era">c. 200 BCE–200 CE</td><td class="shastra">Early Pāñcarātra texts (Nārāyaṇīya section of Mahābhārata)</td><td><span class="tag tantric">Vaiṣṇava Āgama</span></td><td class="note">The earliest datable evidence of organised Vaiṣṇava Āgamic worship practice; the Vyūha theology first articulated systematically</td></tr>
+        <tr><td class="era">c. 2nd–4th century CE</td><td class="shastra">Early Śaiva Siddhānta Āgamas (core of Kāmikāgama, Mṛgendragama)</td><td><span class="tag tantric">Śaiva Āgama</span></td><td class="note">The founding documents of organised Śaiva temple worship; pati-paśu-pāśa ontology established; the template for all subsequent South Indian Śaiva temple ritual</td></tr>
+        <tr><td class="era">c. 5th–7th century CE</td><td class="shastra">Mālinīvijayottaratantra; early Kaula texts</td><td><span class="tag tantric">Śaiva–Kaula</span></td><td class="note">The founding texts of the non-Siddhāntic Śaiva traditions — more radical in practice and more monistic in philosophy. Abhinavagupta will later make these his primary Āgamic reference</td></tr>
+        <tr><td class="era">c. 600–800 CE</td><td class="shastra">Vāmakeśvarīmata; Nityāṣoḍaśikārṇava (Śrīvidyā core texts)</td><td><span class="tag tantric">Śākta</span></td><td class="note">The primary texts of the Śrīvidyā tradition; the navaāvaraṇa worship system systematised; the Śrī Yantra's nine-circuit structure formalised</td></tr>
+        <tr><td class="era">c. 850–950 CE</td><td class="shastra">Utpaladeva — Pratyabhijñākārikā</td><td><span class="tag tantric">Kashmir Śaiva</span></td><td class="note">The philosophical foundation of Abhinavagupta's system; the recognition (pratyabhijñā) school established; Śiva as pure self-luminous consciousness</td></tr>
+        <tr><td class="era">c. 975–1025 CE</td><td class="shastra">Abhinavagupta — Tantrāloka, Mālinīvijayavārttika, Abhinavabhāratī</td><td><span class="tag tantric">Kashmir Śaiva</span></td><td class="note">The single most productive decade in the history of Tantric śāstra; the 36-tattva synthesis, the complete Trika philosophy, and the definitive commentary on the Nāṭyaśāstra all completed within this period</td></tr>
+        <tr><td class="era">c. 1000–1100 CE</td><td class="shastra">Kṣemarāja — Pratyabhijñāhṛdayam, Spandanirṇaya, Śivasūtravārttika</td><td><span class="tag tantric">Kashmir Śaiva</span></td><td class="note">Abhinavagupta's most important student; makes the Kashmir Śaiva system accessible through summary texts that remain the most widely read introductions to the tradition</td></tr>
+        <tr><td class="era">c. 1100–1300 CE</td><td class="shastra">Śrīvidyā systematisation; Amṛtānandanātha's Yoginīhṛdaya commentary</td><td><span class="tag tantric">Śākta</span></td><td class="note">The Śrīvidyā tradition crystallises into its definitive form; the Yoginīhṛdaya (companion to Vāmakeśvarīmata) receives its definitive commentary; the tradition reaches South India and integrates with Śaiva Siddhānta</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <div class="cl-head">Part III Conclusion</div>
+    <p style="font-size:15px;">The Āgamic and Tantric śāstras are not a footnote to the Vedic tradition — they are a parallel civilisational project of comparable scope and sophistication, and in some respects (philosophical synthesis, cosmological completeness, the integration of philosophy with embodied practice) they exceed what the Vedic tradition achieved. The key insight that Part III establishes is this: the <em>śāstric method</em> — systematic, rule-governed, argued, complete — is so deeply embedded in the Indian intellectual tradition that even the traditions that most radically departed from Vedic norms (Tantra, Āgama) could not help but organise their teaching in śāstric form. The method transcended its original institutional context and became the universal medium of Indian systematic thought.</p>
+  </div>
+
+  <div class="footnotes">
+    <h4>Selected Bibliography · Part III</h4>
+    <div class="fn-item"><span class="fn-num">[1]</span>Sanderson, A. (2009). "The Śaiva Age: The Rise and Dominance of Śaivism during the Early Medieval Period." In <em>Genesis and Development of Tantrism</em>. Institute of Oriental Culture, Tokyo.</div>
+    <div class="fn-item"><span class="fn-num">[2]</span>Padoux, A. (2011). <em>Tantric Mantras: Studies on Mantrasastra</em>. Routledge. The definitive modern study of mantra theory as śāstra.</div>
+    <div class="fn-item"><span class="fn-num">[3]</span>Dyczkowski, M.S.G. (1989). <em>The Canon of the Śaivāgama</em>. Albany: SUNY Press.</div>
+    <div class="fn-item"><span class="fn-num">[4]</span>Torella, R. (1994). <em>The Īśvarapratyabhijñākārikā of Utpaladeva with the Author's Vṛtti</em>. Rome: ISMEO.</div>
+    <div class="fn-item"><span class="fn-num">[5]</span>Brooks, D.R. (1992). <em>Auspicious Wisdom: The Texts and Traditions of Śrīvidyā Śākta Tantrism in South India</em>. Albany: SUNY Press.</div>
+  </div>
+
+  <div class="footer-nav">
+    <span class="fn-btn" onclick="showSection('s-agama-vs-veda')">← §7 Āgama vs. Veda</span>
+    <a class="fn-btn" href="shastra-series-part4.html">Continue to Part IV: Medieval Synthesis →</a>
+  </div>
+</section>
+
+</div>
+</main>
+</div>
+<button class="menu-toggle" id="menuToggle">☰</button>
+<script>
+const navlinks=document.querySelectorAll('.navlink');
+const tabbtns=document.querySelectorAll('.tabbtn');
+const sections=document.querySelectorAll('.section');
+const crumb=document.getElementById('crumb');
+function showSection(id){
+  sections.forEach(s=>s.classList.toggle('hidden',s.id!==id));
+  navlinks.forEach(l=>l.classList.toggle('active',l.dataset.target===id));
+  tabbtns.forEach(t=>t.classList.toggle('active',t.dataset.target===id));
+  const activeTab=document.querySelector('.tabbtn[data-target="'+id+'"]');
+  if(activeTab)crumb.textContent=activeTab.textContent;
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('sidebar').classList.remove('open');
+  history.replaceState(null,'','#'+id);
+  if(activeTab)activeTab.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+}
+navlinks.forEach(l=>l.addEventListener('click',()=>showSection(l.dataset.target)));
+tabbtns.forEach(t=>t.addEventListener('click',()=>showSection(t.dataset.target)));
+document.getElementById('menuToggle').addEventListener('click',()=>{document.getElementById('sidebar').classList.toggle('open');});
+window.addEventListener('DOMContentLoaded',()=>{
+  const hash=location.hash.replace('#','');
+  showSection(hash&&document.getElementById(hash)?hash:'s-abstract3');
+});
+</script>
+</body>
+</html>
